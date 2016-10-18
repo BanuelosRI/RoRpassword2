@@ -1,0 +1,40 @@
+Step one / Configure your Route:
+1. go into the config folder, then the routes.rb file
+
+2. Writing the code to create the route:
+  get '/literal url extension' => 'controller class name # method name'
+  ex: get '/name' => 'name#method'
+
+  1. the get means load
+
+  2. within the single quotes, type in the literal name of what extension you want in the url.
+
+  3. after the hash rocket, within single quotes, put in the name of your controller class, then a hash tag, then the name of the method belonging to the class
+
+
+Step two / create your controller
+1. go into the controller folder (which is inside the app folder) and create a "controller_name.rb" file
+
+2. in that file, initialize your controller class ex: "class NameController". The Name will be exactly the same as the Controller class name in your route.
+and the "Controller" refers to that fact that is it a controller class.
+
+3. Make this class inherit from ApplicationController
+ex: class NameController < ApplicationController
+
+4. Create a method within this class which will have the same name as the method in the route.
+ex: class NameController < ApplicationController
+      def method
+      end
+    end
+
+Step three / create your view
+1. Go into the views (which is inside your app folder)
+
+2. Create a folder with a same name as your controller class
+ex: app -> views -> name
+
+3. Within the folder create separate files for each method belonging to that class, these files should be saved as .html.erb files.
+ex: app -> views -> name -> method.html.erb
+
+This file is wrapped into the pre-existing code from app -> views -> layouts -> application.html.erb
+We can write our html code in this file.

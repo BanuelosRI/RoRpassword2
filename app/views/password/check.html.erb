@@ -1,0 +1,14 @@
+<h1>Welcome, enter your user ID and password</h1>
+<br />
+
+<form action="check_password" method="get">
+  User Name:<br>
+  <input type="text" name="userid"><br>
+  User Password:<br>
+  <input type="text" name="password">
+  <input type="submit" value="submit" />
+</form>
+<br>
+<hr />
+
+<p> Are your credentials valid? : <%= @result %> </p>
