@@ -38,3 +38,12 @@ ex: app -> views -> name -> method.html.erb
 
 This file is wrapped into the pre-existing code from app -> views -> layouts -> application.html.erb
 We can write our html code in this file.
+
+
+FOR CSS:::
+app -> assets -> stylesheets -> create a new .css file, no need to link it anywhere, rails just knows where to find it.
+
+
+FOR BOOTSTRAP::
+add the bootstrap CDN to the head tag of application.html.erb.
+Then in the html.erb file you want to bootstrap, put in the <div class="row"> or whatever, wherever you would put it in a regular html file

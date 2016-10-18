@@ -1,14 +1,36 @@
-<h1>Welcome, enter your user ID and password</h1>
-<br />
+<div class="container">
 
-<form action="check_password" method="get">
-  User Name:<br>
-  <input type="text" name="userid"><br>
-  User Password:<br>
-  <input type="text" name="password">
-  <input type="submit" value="submit" />
-</form>
-<br>
-<hr />
+  <div class="row">
+    <h1>Welcome, enter your user ID and password</h1>
+  </div>
 
-<p> Are your credentials valid? : <%= @result %> </p>
+  <div class="row">
+    <p> You have <%= 5 - @counter.to_i %> tries left </p>
+    <br />
+  </div>
+
+  <div class="row">
+    <form action="check_password" method="get">
+        User Name:<br>
+        <input type="text" name="userid"><br>
+        User Password:<br>
+        <input type="text" name="password" />
+        <% if @counter.to_i < 5 %>
+        <input type="submit" value="submit" />
+        <% else %>
+        <input type="submit" value="submit" disabled />
+        <% end %>
+    </form>
+  </div>
+
+  <div class="row">
+    <hr />
+
+    <a href="/new_game">New Game</a>
+  </div>
+
+  <div class="row">
+    <p> Are your credentials valid? : <%= @result %> </p>
+  </div>
+
+</div>
