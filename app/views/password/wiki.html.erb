@@ -1,0 +1,124 @@
+<div class="container">
+
+  <div class="row">
+    <h1>Welcome, enter your user ID and password</h1>
+  </div>
+
+  <div class="row">
+    <p> You have <%= 5 - @counter.to_i %> tries left </p>
+    <br />
+  </div>
+
+  <div class="row">
+    <form action="check_password" method="get">
+        User Name:<br>
+        <input type="text" name="userid"><br>
+        User Password:<br>
+        <input type="text" name="password" />
+        <% if @counter.to_i < 5 %>
+        <input type="submit" value="submit" />
+        <% else %>
+        <input type="submit" value="submit" disabled />
+        <% end %>
+    </form>
+  </div>
+
+  <div class="row">
+    <br>
+    <div class="row">
+      <p> Are your credentials valid? : <%= @result %> </p>
+    </div>
+    <hr />
+
+
+  <ol class="breadcrumb">
+    <li><a href="/new_game">New Game</a></li>
+    <li><a href="/app_wiki">App wiki</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ol>
+
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <p>
+        <h2>Setup Wiki</h2>
+
+        <h5>
+          <ul>
+            <li>Step one / Configure your Route:</li><br>
+
+              <ol>
+                <li> Go into the config folder, then the routes.rb file</li><br>
+
+                <li> Writing the code to create the route:
+                  get '/literal url extension' => 'controller class name # method name'
+                  ex: get '/name' => 'name#method'</li><br>
+
+                  <ul>
+                    <li> The get means load</li>
+
+                    <li>Within the single quotes, type in the literal name of what extension you want in the url.</li>
+
+                    <li> After the hash rocket, within single quotes, put in the name of your controller class, then a hash tag, then the name of the method belonging to the class</li><br><br>
+                </ul>
+              </ol>
+
+          <li>Step two / create your controller</li><br>
+            <ol>
+              <li> Go into the controller folder (which is inside the app folder) and create a "controller_name.rb" file</li><br>
+
+              <li> In that file, initialize your controller class ex: "class NameController". The Name will be exactly the same as the Controller class name in your route.
+              and the "Controller" refers to that fact that is it a controller class.</li><br>
+
+              <li>Make this class inherit from ApplicationController
+              ex: class NameController < ApplicationController</li><br>
+
+              <li>Create a method within this class which will have the same name as the method in the route.
+              ex: class NameController < ApplicationController
+                    def method
+                    end
+                  end</li><br><br>
+            </ol>
+          <li>Step three / create your view</li><br>
+          <ol>
+            <li>Go into the views (which is inside your app folder)</li><br>
+
+            <li>Create a folder with a same name as your controller class
+            ex: app -> views -> name</li><br>
+
+            <li>Within the folder create separate files for each method belonging to that class, these files should be saved as .html.erb files.
+            ex: app -> views -> name -> method.html.erb</li><br>
+            <ul>
+              <li>This file is wrapped into the pre-existing code from app -> views -> layouts -> application.html.erb
+              We can write our html code in this file.</li><br>
+            </ul>
+          </ol>
+
+          <li>FOR CSS:::</li>
+          <ul>
+            <li>app -> assets -> stylesheets -> create a new .css file, no need to link it anywhere, rails just knows where to find it.</li><br>
+          </ul>
+
+          <li>FOR BOOTSTRAP:::</li>
+          <ul>
+            <li>Add the bootstrap CDN to the head tag of application.html.erb.
+            Then in the html.erb file you want to bootstrap, put in the  or whatever, wherever you would put it in a regular html file</li><br><br><br>
+            </ul>
+        </h5>
+      </p>
+    </div>
+    <div class="col-md-1"></div>
+
+  </div>
+
+
+
+
+
+
+
+  </div>
+
+
+
+</div>
